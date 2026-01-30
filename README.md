@@ -1,4 +1,4 @@
-# ITC-Suite_Docs --- Main directory of documentation for the ITC-Suite
+# ITC-Suite_Docs --- Main documentation directory
 
 ## Individual tree approach to forest inventory
 
@@ -63,11 +63,55 @@ __Figure 4 -__ List of ITC-Suite programs available under ArcGIS or ArcGIS Pro
 
 Instead,,, make a real list a a one liner explantion of each program
 
+## List of ITC-Suite Programs
+
+### <ins>Pre-Processing</ins>
+
+**AVE_FILTER - Average Smoothing**
+
+- To produce a smoothed image useful (needed) for itcvfol_g of the ITC-Suite
+
+**ITCAFAV - Adaptive Smoothing**
+
+- To smooth various image areas "more or less" depending on needs.
+
+**BMCOMBO - Bitmap combinations**
+
+- Program to combine two bitmaps into a third one
+
+**IMA_THR - Image Thresholding**
+
+- To threshold (using a range) an image channel, typically to produce the non-forest mask
 
 
-The Suite can be used from a Windows "Command Prompt" window or a Linux shell window 
+
+
+### <ins>ITC-Analysis</ins>
+
+
+###  <ins>Post-Processing</ins>
+
+
+
+
+
+
+
+##  Notes
+
+The Suite can be used from a Windows "Command Prompt" window or a Linux terminal shell window.
+I generally prefer to use the ITC-Suite that way, but that's me.
+This feature is very useful to create simple text-based scripts towards more automation.
+This should make possible the use of the ITC-Suite from other environments (e.g., R, Python)
+
+
+
+
+
 
 Point to the various manuals
+
+Point to various HTML page showing results
 
 Point the all papera via Publications_X.html
 
