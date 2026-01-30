@@ -29,12 +29,12 @@ Volume and biomass have already beenestimated using this approach using a combin
 In addition, the ITC Suite has been used for a variety of specializedinventories (e.g., single species or snag detection, damage and health issues,gap assessments) and has specialized modules for regenerationassessment.
 While the ITC information is currently regrouped at the forest stand level, itmay soon be gathered and used directly for forest management andoperation planning. With high-resolution satellite or aerial images, precise,accurate and timely semi-automatic ITC-based forest inventories couldreplace the costly process being used today.
 
-![GDAL_ITC-Suite_Main_Fig.gif](./images/GDAL_ITC-Suite_Main_Fig.gif)
+![GDAL_ITC-Suite_Main_Fig.gif](./images/GDAL_ITC-Suite_Main_Fig.GIF)
 
 **Figure 3 - ** ArcGIS View of the ITC-Suite
 
 
-![ArcGIS_ITC-Suite_Toolbox.gif](./images/ArcGIS_ITC-Suite_Toolbox.gif)
+![ArcGIS_ITC-Suite_Toolbox.gif](./images/ArcGIS_ITC-Suite_Toolbox.GIF)
 **Figure 4 - **ArcGIS Toolbox
 
 
