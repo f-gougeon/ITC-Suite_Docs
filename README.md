@@ -51,6 +51,8 @@ it may soon be gathered and used directly for forest management and operation pl
 
 With high-resolution satellite or aerial images, precise, accurate and timely semi-automatic ITC-based forest inventories could replace the costly process being used today.
 
+Originally developed for the PCI Catalyst/Geomatica/EASI environment, the ITC-Suite is now available for the ArcGIS or ArcGIS Pro environment as illustrated below:
+
 ![GDAL_ITC-Suite_Main_Fig.gif](./images/GDAL_ITC-Suite_Main_Fig.GIF)
 
 __Figure 3 -__ The ITC-Suite used within ArcGIS
@@ -59,11 +61,15 @@ __Figure 3 -__ The ITC-Suite used within ArcGIS
 
 __Figure 4 -__ List of ITC-Suite programs available under ArcGIS or ArcGIS Pro
 
+Instead,,, make a real list a a one liner explantion of each program
+
+
+
 The Suite can be used from a Windows "Command Prompt" window or a Linux shell window 
 
 Point to the various manuals
 
-Point the various paper via Publications_X.html
+Point the all papera via Publications_X.html
 
 
 
