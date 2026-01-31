@@ -126,6 +126,9 @@ __Figure 3 -__ The ITC-Suite used within ArcGIS
 
 ### <ins>Post-Processing</ins>
 
+**THICKBIT - Thicken bits in a bitmap**
+
+- Thicken bits in a bitmap typically to make them more visible (e.g., from treetops)
 
 
 
@@ -153,7 +156,7 @@ Point to various HTML page showing results
 
 Point the all papera via Publications_X.html
 
-
+![List of FG's Publications](./images/publications_e.html)
 
 
 
