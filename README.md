@@ -57,11 +57,6 @@ Originally developed for the PCI Catalyst/Geomatica/EASI environment, the ITC-Su
 
 __Figure 3 -__ The ITC-Suite used within ArcGIS
 
-![ArcGIS_ITC-Suite_Toolbox.gif](./images/ArcGIS_ITC-Suite_Toolbox.GIF)
-
-__Figure 4 -__ List of ITC-Suite programs available under ArcGIS or ArcGIS Pro
-
-Instead,,, make a real list a a one liner explantion of each program
 
 ## List of ITC-Suite Programs
 
@@ -83,13 +78,50 @@ Instead,,, make a real list a a one liner explantion of each program
 
 - To threshold (using a range) an image channel, typically to produce the non-forest mask
 
+**NDVI_IMA - Normalized Vegetation Index Image**
 
+-  	From two input images assumed nIR and RED, this program creates an NDVI image
 
+**GLINV - Grey Level Invertion of an Image**
+
+- Works with 8-bit or 16-bit images, but only 8 to 8, 16 to 16
+
+**GRAD_DC - Gradient-based Directionality Content**
+
+- Produces an output image related to the amount of gradient directionality found in
+  small areas (blocks) of the input image in a direction commensurate with SUNANG
+
+**HOMOGEN - Homogeneity (OR Inhomogeneity) within an image**
+
+- Produces an output image convaying the texture "homogeneity"
+	of the input image based on a specific variable (HOMOVAR)
 
 ### <ins>ITC-Analysis</ins>
 
+**LATTOPS - Locally Adaptive Tree Tops**
 
-###  <ins>Post-Processing</ins>
+- Finds treetops (TTs) in dense areas and treetops with specific shadows
+	in more open areas, as designated by the directionality mask (DIRMASK).
+
+**ITCVFOL - Individual Tree Crown Valley Following**
+
+- Produces an output bitmap (1 bit tif) representing lines and
+	areas of shaded material between tree crowns. Done by following
+	valleys of shaded material (dark) between brighter tree crowns.
+
+**ITCISOL - Individual Tree Crown Isolation** 
+
+- Produces an output bitmap (1 bit tif) showing
+	distinct individual tree crowns (ITC) using
+	a rule-based approach to continue and formalize the 
+	outlines of tree crowns and tree clusters partially 
+	delineated by ITCVFOL
+
+
+
+
+
+### <ins>Post-Processing</ins>
 
 
 
