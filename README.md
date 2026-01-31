@@ -33,12 +33,12 @@ which can in turn be used to assess forest stand heights or ITC heights.
 Wood volumes can be calculated the conventional way but using more precise species compositions, 
 or on a stand basis, or on an ITC basis, as functions of species, crown area, and height.
 
-REFER TO BC-X-460
+[Stand’s species composition and ITC-based volume](https://ostrnrcan-dostrncan.canada.ca/handle/1845/218112)
 
 Even though the ITC-Suite was originally developed to analyse aerial multispectral data,
 images from the current generation of high-resolution satellites can also be used for ITC-based forest analysis.
 
-REFER TO BC-X-445
+[ITCs from high spatial resolution satellite images](https://ostrnrcan-dostrncan.canada.ca/handle/1845/222640)
 
 Of course, the ITC-Suite can also be used to analyse data from drone acquisitions, 
 although it is generally advisable to degrade the image resolution to around 30-50 cm/pixel.
@@ -56,6 +56,9 @@ Originally developed for the PCI Catalyst/Geomatica/EASI environment, the ITC-Su
 ![GDAL_ITC-Suite_Main_Fig.gif](./images/GDAL_ITC-Suite_Main_Fig.GIF)
 
 __Figure 3 -__ The ITC-Suite used within ArcGIS
+
+<br>
+
 
 
 ## List of ITC-Suite Programs
@@ -124,6 +127,9 @@ __Figure 3 -__ The ITC-Suite used within ArcGIS
 ### <ins>Post-Processing</ins>
 
 
+
+
+<br>
 
 
 
