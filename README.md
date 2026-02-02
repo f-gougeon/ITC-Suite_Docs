@@ -1,6 +1,6 @@
 # ITC-Suite_Docs --- Main documentation directory
 
-## Individual tree approach to forest inventory
+## Individual tree crown (ITC) approach to forest inventory
 
 Most forest inventories in Canada are still produced largely through the interpretation of images and anchored by field surveys, 
 a tedious and costly process. 
@@ -51,11 +51,11 @@ it may soon be gathered and used directly for forest management and operation pl
 
 With high-resolution satellite or aerial images, precise, accurate and timely semi-automatic ITC-based forest inventories could replace the costly process being used today.
 
-Originally developed for the PCI Catalyst/Geomatica/EASI environment, the ITC-Suite is now available for the ArcGIS or ArcGIS Pro environment as illustrated below:
+Originally developed for the PCI Catalyst/Geomatica/EASI environment, the ITC-Suite (GDAL version) is now available for the ArcGIS or ArcGIS Pro environment as shown below:
 
 ![GDAL_ITC-Suite_Main_Fig.gif](./images/GDAL_ITC-Suite_Main_Fig.GIF)
 
-__Figure 3 -__ The ITC-Suite used within ArcGIS
+__Figure 3 -__ The ITC-Suite  (GDAL version) used within ArcGIS
 
 <br>
 
@@ -120,8 +120,22 @@ __Figure 3 -__ The ITC-Suite used within ArcGIS
 	outlines of tree crowns and tree clusters partially 
 	delineated by ITCVFOL
 
+**ITCMG - ITC Mask Generator (LIT/SHADED/TT)**
 
+- Generates a bitmap assumed representative of the lit side, shaded side, or top of tree crowns
 
+**ITCSSG - ITC Species Signature Generator**
+
+- Generates ITC-based signatures for different species of trees.
+
+**ITCSC - Individual Tree Crown (ITC) Supervised Classifier**
+
+- Classifies the ITCs into different species using a Maximum-Likelihood decision rule.
+
+**ITCCA - Individual Tree Crown (ITC) Classification Accuracy**
+
+- Generates a confusion matrix for testing areas versus
+ the classes resulting from the ITC classifications.  
 
 
 ### <ins>Post-Processing</ins>
@@ -132,11 +146,12 @@ __Figure 3 -__ The ITC-Suite used within ArcGIS
 
 
 
+
+
+
+
+
 <br>
-
-
-
-
 
 ##  Notes
 
@@ -147,6 +162,7 @@ This should make possible the use of the ITC-Suite from other environments (e.g.
 
 
 
+<br>
 
 
 
