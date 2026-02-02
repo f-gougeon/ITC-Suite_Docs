@@ -55,7 +55,7 @@ Originally developed for the PCI Catalyst/Geomatica/EASI environment, the ITC-Su
 
 ![GDAL_ITC-Suite_Main_Fig.gif](./images/GDAL_ITC-Suite_Main_Fig.GIF)
 
-__Figure 3 -__ The ITC-Suite  (GDAL version) used within ArcGIS
+__Figure 3 -__ The ITC-Suite (GDAL version) used from a Toolbox within the ArcGIS environment
 
 <br>
 
@@ -137,16 +137,33 @@ __Figure 3 -__ The ITC-Suite  (GDAL version) used within ArcGIS
 - Generates a confusion matrix for testing areas versus
  the classes resulting from the ITC classifications.  
 
-
 ### <ins>Post-Processing</ins>
 
 **THICKBIT - Thicken bits in a bitmap**
 
-- Thicken bits in a bitmap typically to make them more visible (e.g., from treetops)
+- Thicken bits from a bitmap, typically to make them more visible (e.g., from treetops)
 
+**ITCSFIL -Individual Tree Crown Size Filter**
 
+- Generates a bitmap containing only the crowns within a certain range of crown sizes, diameters, execentricity. 
 
+**ITCPCD - ITC Polygon Content Description**
 
+- Ouputs statistics about classified ITCs for each polygon  (forest stand) of a vector layer
+  
+**STEMDENS - Produces a stem density image**
+
+-  Generates a raster image where each pixel value is relative to the number of stem/hectare in its neighbourhood.
+
+**CCLOSURE - Produces a crown closure image**
+
+- Generates a raster image where each pixel value is relative to canopy closure in a given neighbourhood.
+
+**SHAD_LEN - To find length of tree shadows in sparsely treed areas**
+
+- From a bitmap showing tree shadows (often acquired by simple thresholding),
+this program generates a bitmap containing some shadow length within
+given ranges of lengths and widths
 
 
 
