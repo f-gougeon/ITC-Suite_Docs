@@ -154,6 +154,15 @@ Point to the various manuals
 
 Point to various HTML page showing results
 
+[Individual tree crown (ITC) techniques](https://cfs.nrcan.gc.ca/projects/102)
+
+[ITC analysis of satellite images](https://cfs.nrcan.gc.ca/projects/103)
+
+[ITC analysis of aerial images](https://cfs.nrcan.gc.ca/projects/113)
+
+[Forest regeneration assessment techniques] (https://cfs.nrcan.gc.ca/projects/114)
+
+
 Point the all papera via Publications_X.html
 
 ![List of FG's Publications](./images/publications_e.html)
