@@ -150,7 +150,18 @@ This should make possible the use of the ITC-Suite from other environments (e.g.
 
 
 
-Point to the various manuals
+Please check the main "plain text" manual of the GDAL version of the ITC-Suite:
+
+[ITC-Suite_GDAL_Info.txt](./ITC-Suite_GDAL_Info.txt)
+
+
+Compiling instruction are found at:
+
+[GDAL_ITC-Suite_Compile.txt](./GDAL_ITC-Suite_Compile.txt)
+
+[ITC-Suite_GDAL.chm](./ITC-Suite_GDAL.chm)
+
+
 
 Point to various HTML page showing results
 
@@ -164,7 +175,7 @@ Point to various HTML page showing results
 
 
 
-Many publications about the ITC-Suite and its uses can be found at:
+Many publications about the ITC-Suite and its many applications can be found at:
 
 ![List of FG's Publications](./images/publications_e.html)
 
