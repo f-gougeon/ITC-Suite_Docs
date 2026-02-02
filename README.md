@@ -160,10 +160,11 @@ Point to various HTML page showing results
 
 [ITC analysis of aerial images](https://cfs.nrcan.gc.ca/projects/113)
 
-[Forest regeneration assessment techniques] (https://cfs.nrcan.gc.ca/projects/114)
+[Forest regeneration assessment techniques](https://cfs.nrcan.gc.ca/projects/114)
 
 
-Point the all papera via Publications_X.html
+
+Many publications about the ITC-Suite and its uses can be found at:
 
 ![List of FG's Publications](./images/publications_e.html)
 
