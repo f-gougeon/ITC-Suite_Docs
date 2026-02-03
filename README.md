@@ -61,7 +61,7 @@ __Figure 3 -__ The ITC-Suite (GDAL version) used from a Toolbox within the ArcGI
 
 
 
-## List of ITC-Suite Programs
+## List of ITC-Suite Programs (GDAL version)
 
 ### <ins>Pre-Processing</ins>
 
@@ -166,8 +166,6 @@ this program generates a bitmap containing some shadow length within
 given ranges of lengths and widths
 
 
-
-
 <br>
 
 ##  Notes
@@ -175,24 +173,33 @@ given ranges of lengths and widths
 The Suite can be used from a Windows "Command Prompt" window or a Linux terminal shell window.
 I generally prefer to use the ITC-Suite that way, but that's me.
 This feature is very useful to create simple text-based scripts towards more automation.
-This should make possible the use of the ITC-Suite from other environments (e.g., R, Python)
-
-
+This should also make possible the use of the ITC-Suite from other environments (e.g., R, Python)
 
 <br>
 
+##  ITC-Suite Manuals
 
-
-Please check the main "plain text" manual of the GDAL version of the ITC-Suite:
+For details on all the individual programs' parameters, please check the main "plain text" manual of the GDAL version of the ITC-Suite:
 
 [ITC-Suite_GDAL_Info.txt](./ITC-Suite_GDAL_Info.txt)
 
-
-Compiling instruction are found at:
+Compiling instructions are found at (most modern starting around line 400) :
 
 [GDAL_ITC-Suite_Compile.txt](./GDAL_ITC-Suite_Compile.txt)
 
+If on a windows machine, you can download and use the following user-friendly version of the manual:
+
 [ITC-Suite_GDAL.chm](./ITC-Suite_GDAL.chm)
+
+
+For additional info on how to run the ITC-Suite, 
+one can check the ITC-Suite Manual from 2010 (meant for the PCI environment).
+
+Gougeon, F.A. 2010 
+The ITC Suite Manual : A Semi-Automatic Individual Tree Crown (ITC) Approach to Forest Inventories
+Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre, 
+Victoria, B.C. Canada.  June 2010. 92  p. 
+
 
 
 
