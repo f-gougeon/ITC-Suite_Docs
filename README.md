@@ -28,17 +28,34 @@ Precise species composition and other forest information is produced for each st
 __Figure 2 -__ ITC-based stand information typically transferred to GeographicInformation Systems.
 
 
-Aerial LiDAR data or stereo image autocorrelation can be  used to produce precise Digital Canopy Model(DCM), 
-which can in turn be used to assess forest stand heights or ITC heights. 
-Wood volumes can be calculated the conventional way but using more precise species compositions, 
+Aerial LiDAR data or stereo image autocorrelation can be used to produce precise Digital Canopy Model(DCM), 
+which can in turn can be used to assess forest stand heights or ITC heights. 
+Wood volumes can be calculated the conventional way, but using more precise species compositions, 
 or on a stand basis, or on an ITC basis, as functions of species, crown area, and height.
 
-[Stand’s species composition and ITC-based volume](https://ostrnrcan-dostrncan.canada.ca/handle/1845/218112)
+For stand’s species composition and ITC-based volume, check the following:
+<P>
+Gougeon, F.A.; Leckie, D.G; Woods M. 2023.
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/218112">
+Individual Tree Crown (ITC) Inventory and Analysis of the Petawawa Research Forest:
+Stand’s species composition and ITC-based volume.</A>
+PFC Information Report. BC-X-460.
+Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre, 
+Victoria, B.C., Canada. nn p.
+</P>
 
 Even though the ITC-Suite was originally developed to analyse aerial multispectral data,
-images from the current generation of high-resolution satellites can also be used for ITC-based forest analysis.
+images from the current generation of high-resolution satellites can also be used for ITC-based forest analysis, see:
 
-[ITCs from high spatial resolution satellite images](https://ostrnrcan-dostrncan.canada.ca/handle/1845/222640)
+<P>
+Gougeon, F.A.; Labrecque, P.; Guérin, M.; Leckie, D.G. 2019.
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/222640">
+Semi-automatic individual tree crown analysis of forests from high spatial resolution 
+satellite images: Comparison with a Quebec ecoforestry map.</A>
+PFC Information Report BC-X-445.
+Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre, 
+Victoria, B.C., Canada. 24&nbsp;p.
+</P>
 
 Of course, the ITC-Suite can also be used to analyse data from drone acquisitions, 
 although it is generally advisable to degrade the image resolution to around 30-50 cm/pixel.
@@ -187,7 +204,7 @@ Compiling (and running) instructions are found at (most modern starting around l
 
 [GDAL_ITC-Suite_Compile.txt](./GDAL_ITC-Suite_Compile.txt)
 
-If on a windows machine, you can download and use the following user-friendly version of the manual:
+If on a windows machine, you can download and may be able to use the following user-friendly version of the manual:
 
 [ITC-Suite_GDAL.chm](./ITC-Suite_GDAL.chm)
 
@@ -195,16 +212,10 @@ If on a windows machine, you can download and use the following user-friendly ve
 For additional info on how to run the ITC-Suite, 
 one can check the ITC-Suite Manual from 2010 (meant for the PCI environment).
 
-Gougeon, F.A. 2010 
-The ITC Suite Manual : A Semi-Automatic Individual Tree Crown (ITC) Approach to Forest Inventories
-Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre, 
-Victoria, B.C. Canada.  June 2010. 92  p. 
-
 
 <P> Gougeon, F.A. 2010.
-<A HREF="http://cfs.nrcan.gc.ca/publications/?id=31918">
-The ITC Suite Manual : 
-A Semi-Automatic Individual Tree Crown (ITC) Approach to Forest Inventories. </A>
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/247283">
+The ITC Suite Manual : A Semi-Automatic Individual Tree Crown (ITC) Approach to Forest Inventories. </A>
 Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre, 
 Victoria, B.C. Canada.  June 2010. 92 &nbsp;p. </P>
 
