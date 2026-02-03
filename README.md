@@ -210,9 +210,8 @@ If on a windows machine, you can download and may be able to use the following u
 
 
 For additional info on how to run the ITC-Suite, 
-one can check the ITC-Suite Manual from 2010 (meant for the PCI environment).
-
-In any case, you may want to read the first 12 pages to get an overview of the ITC-Suite.
+one should check the ITC-Suite Manual from 2010 (meant for the PCI environment).
+It is highly recommended to read the first 12 pages to get a good overview of the ITC-Suite.
 
 
 <P> Gougeon, F.A. 2010.
@@ -234,7 +233,7 @@ Point to various HTML page showing results
 
 
 
-Many publications about the ITC-Suite and its many applications can be found at:
+Publications about the ITC-Suite and its many applications can be found at:
 
 ![List of FG's Publications](./images/publications_e.html)
 
