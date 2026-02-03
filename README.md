@@ -183,7 +183,7 @@ For details on all the individual programs' parameters, please check the main "p
 
 [ITC-Suite_GDAL_Info.txt](./ITC-Suite_GDAL_Info.txt)
 
-Compiling instructions are found at (most modern starting around line 400) :
+Compiling (and running) instructions are found at (most modern starting around line 400) :
 
 [GDAL_ITC-Suite_Compile.txt](./GDAL_ITC-Suite_Compile.txt)
 
@@ -201,6 +201,12 @@ Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre,
 Victoria, B.C. Canada.  June 2010. 92  p. 
 
 
+<P> Gougeon, F.A. 2010.
+<A HREF="http://cfs.nrcan.gc.ca/publications/?id=31918">
+The ITC Suite Manual : 
+A Semi-Automatic Individual Tree Crown (ITC) Approach to Forest Inventories. </A>
+Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre, 
+Victoria, B.C. Canada.  June 2010. 92 &nbsp;p. </P>
 
 
 Point to various HTML page showing results
