@@ -191,6 +191,9 @@ The Suite can be used from a Windows "Command Prompt" window or a Linux terminal
 I generally prefer to use the ITC-Suite that way, but that's me.
 This feature is very useful to create simple text-based scripts towards more automation.
 This should also make possible the use of the ITC-Suite from other environments (e.g., R, Python)
+<P>
+An example of such a script is <B>Example_Gdal_ITC-Suite_Run.txt</B> (above)
+</P>
 
 <br>
 
@@ -220,8 +223,8 @@ The ITC Suite Manual : A Semi-Automatic Individual Tree Crown (ITC) Approach to 
 Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre, 
 Victoria, B.C. Canada.  June 2010. 92 &nbsp;p. </P>
 
-
-Point to various HTML page showing results
+<P>
+These older Web pages illustrate use of the ITC-Suite.
 
 [Individual tree crown (ITC) techniques](https://cfs.nrcan.gc.ca/projects/102)
 
@@ -238,6 +241,8 @@ Publications about the ITC-Suite and its many applications can be found at:
 ![List of FG's Publications](./images/publications_e.html)
 
 
-
+<P>
+N.B.: Above HTML items (Modern NRCan-Independent versions) to be moved to the Web service of Github	
+</P>
 
 
