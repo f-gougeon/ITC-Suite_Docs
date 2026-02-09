@@ -1,0 +1,86 @@
+
+	Example of an ITC analysis with the GDAL version of the ITC-Suite
+	(as done from a cmd window - same can be done under ArcGIS)
+
+	Francois A. Gougeon
+	Nov. 2024
+
+	Using dataset (or equivalent)
+	C:\Test_Images\PRF_ADS_4x4km_ArcGIS_Tests
+
+
+________________________________________________________
+
+
+REM 		Producing PRF_NonVeg mask
+
+Tests> 	ima_thr_g PRF_4x4km_DCM.tif PRF_NonVeg .tif 0,10
+
+
+REM  		Detecting small tree areas (using texture)
+
+Tests>	homogen_g PRF_4x4km.tif,1 PRF_NVAR.tif NVAR 5,21
+
+Tests>	ima_thr_g  PRF_NVAR.tif PRF_Strees.tif 6,20	! NVAR>6 -- lots of texture
+
+
+REM 		Putting these two masks together
+
+Tests> bmcombo_g PRF_NonVeg.tif  PRF_Strees.tif PRF_NonFor.tif  OR
+
+
+REM		Smoothing the NIR band for our analysis  --> PRF_Ave.tif 
+
+Tests> ave_filter_g PRF_4x4km.tif,1 PRF_Ave.tif 5,3
+
+
+
+REM		Running the Valley Following program --> PRF_VFOL.tif 
+
+Tests> itcvfol_g PRF_Ave.tif PRF_NonFor.tif   AUTO
+
+
+
+REM		Running the Isolation program --> PRF_ISOL.tif 
+
+Tests> itcisol_g PRF_VFOL.tif  PRF_ISOL.tif MATURE
+
+
+
+REM		Getting the lit side of tree crown (for better classif)--> PRF_MG.tif
+
+Tests> itcmg_g PRF_4x4km.tif,1 PRF_ISOL.tif LIT
+
+
+
+
+REM		Creating sigatures from training areas (PRF_Vec6.shp to 13)
+
+Tests> itcssg_g PRF_4x4km.tif 1,-4 PRF_ISOL.tif PRF_MG.tif PRF_Vec.shp,6,-13  MEAN AUTO ITC 2.5
+
+
+
+REM		Running the ITC classsifier
+
+
+Tests> itcsc_g PRF_4x4km.tif 1,-4 PRF_ISOL.tif PRF_MG.tif PRF_SIG_Vec.sig,6,-13  
+
+
+REM		Verifying the classification accuracy
+
+
+Tests>  itcca_g PRF_4x4km.tif PRF_ISOL.tif PRF_Vec.shp,6,-13 PRF_Class.tif,1,-8
+
+
+
+REM		Adding ITC info to existing forest inventory to compare
+
+Tests> itcpcd_g PRF_4x4km.tif PRF_ISOL.tif 1,-8 PRF_For_Inv_2007_v3.shp ...
+				MEDIUMCC ONT PRF_4x4km_DCM.tif PCD_Out_GDAL_v1.shp
+
+
+
+REM	LATTOPS
+
+
+
