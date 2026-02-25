@@ -226,7 +226,12 @@ Victoria, B.C. Canada.  June 2010. 92 &nbsp;p. </P>
 <P>
 These older Web pages illustrate use of the ITC-Suite.
 
-[Individual tree crown (ITC) techniques](https://cfs.nrcan.gc.ca/projects/102)
+<!-- [Individual tree crown (ITC) techniques](https://cfs.nrcan.gc.ca/projects/102) -->
+
+[Individual tree crown (ITC) techniques](./images/FG_ITC_Techniques_2026.html.pdf)
+
+
+
 
 [ITC analysis of satellite images](https://cfs.nrcan.gc.ca/projects/103)
 
