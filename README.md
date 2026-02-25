@@ -246,8 +246,12 @@ Publications about the ITC-Suite and its many applications can be found at:
 ![List of FG's Publications](./images/publications_e.html)
 
 
-<P>
-N.B.: Above HTML items (Modern NRCan-Independent versions) to be moved to the Web service of Github	
-</P>
+Thanks,
+[François A. Gougeon CV](./images/FG_CV_2026.html)
+
+
+
+<!-- N.B.: Modern NRCan-Independent versions of above HTMLs to be moved to the Web service of Github -->
+
 
 
