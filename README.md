@@ -224,7 +224,10 @@ Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre,
 Victoria, B.C. Canada.  June 2010. 92 &nbsp;p. </P>
 
 <P>
-These Web pages illustrate some use of the ITC-Suite.
+These Web pages illustrate some use of the ITC-Suite:
+<BR>
+<B>N.B.:</B> For testing purposes, these are not pointing at "real" Web pages at the moment (no real link)
+<BR> Modern versions of these HTMLs to be moved to GitHub Web service eventually.
 
 <!-- [Individual tree crown (ITC) techniques](https://cfs.nrcan.gc.ca/projects/102) -->
 [Individual tree crown (ITC) techniques](./images/FG_ITC_Techniques_2026.html.pdf)
@@ -250,7 +253,6 @@ Thanks,
 [François A. Gougeon CV](./images/FG_CV_2026.html.pdf)
 
 <P>
-N.B.: Modern (NRCan-Independent) versions of the above HTMLs (or PDFs) to be moved to GitHub Web service
 
 
 
