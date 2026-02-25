@@ -240,12 +240,13 @@ These Web pages illustrate some use of the ITC-Suite.
 
 <P>
 Publications about the ITC-Suite and its many applications can be found at:
+	
 [List of FG's Publications](./images/publications_e.html.pdf)
 
 Thanks,
 		François
 
-<P>
+
 [François A. Gougeon CV](./images/FG_CV_2026.html.pdf)
 
 <P>
