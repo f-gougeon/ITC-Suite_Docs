@@ -226,7 +226,7 @@ Victoria, B.C. Canada.  June 2010. 92 &nbsp;p. </P>
 <P>
 These Web pages illustrate some use of the ITC-Suite:
 <BR>
-<B>N.B.:</B> For testing purposes, these are not pointing at "real" Web pages at the moment (no real link)
+<B>N.B.:</B> For testing purposes, these are not pointing at "real" Web pages at the moment (<B>no live link</B>)
 <BR> Modern versions of these HTMLs to be moved to GitHub Web service eventually.
 
 <!-- [Individual tree crown (ITC) techniques](https://cfs.nrcan.gc.ca/projects/102) -->
