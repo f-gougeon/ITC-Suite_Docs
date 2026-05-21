@@ -1,0 +1,20 @@
+
+
+
+Polygons are passé: how Individual Tree Crown (ITC) mapping technology
+will inform future forest management
+
+
+From local to national to global levels, improvements in the accuracy, 
+timeliness and cost-effectiveness of forest information are badly needed.
+Most forest inventories in Canada are still produced largely through the 
+interpretation of aerial/satellite images anchored by field information, 
+a tedious and costly process. 
+
+Instead, it could be more useful to use computers to delineate individual tree crowns, 
+assess their species and then regroup them into forest stands (if needed).
+Alternatively, databases of properly located and recognized individual trees
+could change our ways of managing the forest, minimizing the differences between 
+management and operational inventories.
+
+This talk will describe the fundamentals of the ITC-Suite and its numerous applications.

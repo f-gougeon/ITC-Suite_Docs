@@ -1,0 +1,11 @@
+
+About François Gougeon
+
+François started with the CFS in 1979, in Ottawa.  As a "Computer Scientist" and an Engineer, he was responsible for the ARIES system, a million dollar prototype image analysis system. December 1980, François and ARIES where transferred to the Petawawa National Forestry Institute (PNFI), where as a "Physical Scientist" he migrated gradually toward more research endeavours.
+
+In 1984, he was granted a CFS paid educational leave and got a Ph.D. in "Computer Vision". Back at PNFI, he started his work on delineating and recognizing individual tree crowns (ITC) in high spatial resolution (30-100 cm/pixel) aerial images while also working on an autonomous forestry robot.
+
+After the demise of PNFI in 1996, he was offered a transfer to PFC where he continued to develop and apply his ITC techniques in numerous projects in collaboration with provincial agencies and forestry consultant compagnies.
+
+This talk is about the numerous forestry applications of the ITC-Suite.
+
