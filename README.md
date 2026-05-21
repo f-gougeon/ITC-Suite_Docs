@@ -230,27 +230,27 @@ These Web pages illustrate some use of the ITC-Suite:
 <BR> Modern versions of these HTMLs to be moved to GitHub Web service eventually.
 
 <!-- [Individual tree crown (ITC) techniques](https://cfs.nrcan.gc.ca/projects/102) -->
-[Individual tree crown (ITC) techniques](./images/FG_ITC_Techniques_2026.html.pdf)
+[Individual tree crown (ITC) techniques](./html-pdf/FG_ITC_Techniques_2026.html.pdf)
 
 <!-- [ITC analysis of satellite images](https://cfs.nrcan.gc.ca/projects/103) -->
-[ITC analysis of satellite images](./images/FG_ITC_Ana_Sat_Ima_2026.html.pdf)
+[ITC analysis of satellite images](./html-pdf/FG_ITC_Ana_Sat_Ima_2026.html.pdf)
 
 <!-- [ITC analysis of aerial images](https://cfs.nrcan.gc.ca/projects/113) -->
-[ITC analysis of aerial images](./images/FG_ITC_Ana_Aerial_Ima_2026.html.pdf)
+[ITC analysis of aerial images](./html-pdf/FG_ITC_Ana_Aerial_Ima_2026.html.pdf)
 
 <!-- [Forest regeneration assessment techniques](https://cfs.nrcan.gc.ca/projects/114) -->
-[Forest regeneration assessment techniques](./images/FG_Regen_2026.html.pdf)
+[Forest regeneration assessment techniques](./html-pdf/FG_Regen_2026.html.pdf)
 
 <P>
 Publications about the ITC-Suite and its many applications can be found at:
 	
-[List of FG's Publications](./images/publications_e.html.pdf)
+[List of FG's Publications](./html-pdf/publications_e.html.pdf)
 
 Thanks,
 		François
 
 
-[François A. Gougeon CV](./images/FG_CV_2026.html.pdf)
+[François A. Gougeon CV](./html-pdf/FG_CV_2026.html.pdf)
 
 <P>
 
