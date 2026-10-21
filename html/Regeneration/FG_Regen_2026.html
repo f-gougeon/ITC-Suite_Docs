@@ -1,0 +1,111 @@
+
+<H1>Forest Regeneration Assesment Techniques</H1>
+
+
+<p>by <a HREF="../FG_CV/FG_CV_2026.html">François A. Gougeon</a>, Ph.D. <br>
+
+
+<H2>Abstract</H2>
+<P>
+The success of forest regeneration is an essential component in sustainable forest management. Its
+accurate and timely assessment, usually done by field surveys, constitute an integral part of forest
+vegetation management. Interpretation of aerial photographs can possibly alleviate this process, but
+the use of digital aerial images offers the potential for more quantitative semi-automatic computerized
+assessments. 
+<P>
+With this in mind, a locally adaptive technique to regeneration assessment from high
+resolution aerial images (30-60 cm/pixel) was developed. It detects the young trees and produces
+information such as stem density, average tree spacing and stocking of given stands. It can also pinpoint
+areas of under or overstocking. 
+<P>
+This technique is based on previous work directed at tree
+detection in mature forest with medium resolution images (1-3 m/pixel) which detects local maxima
+and considers them to represent the "tree tops" of conifers. Whether used with mature forest stands in
+medium resolution images or for regeneration assessments in high resolution images, it is generally
+only appropriate for dense stands where every tree is surrounded by shade. Its use on sparse stands
+generates numerous false positives on the ground between the trees. For such cases, a modification of
+the algorithm to take into consideration the presence of a specific shadow for every tree alleviates the
+problem. The hybrid approach described here is capable of switching from one mode of operation to
+the other (open or dense stand) based on a pre-computed local directionality factor. Preliminary results
+on regeneration stands of various ages and densities demonstrate its capabilities.
+
+<P>
+
+<img src="./Images/Regen_Fig1_s.gif">
+<img src="./Images/Regen_Fig2_s.gif">
+<img src="./Images/Regen_Fig3_s.gif">
+
+<P> 
+<B>Fig. 1 - </B>Pseudo-colour infrared view of a MEIS-II image (30
+cm/pixel) of the Sturgeon Plantation in the Petawawa Research Forest
+near Chalk River, Ontario.  
+
+<P>
+<B>Fig. 2 - </B>Characteristics of the regeneration stands in Figure 1.  
+
+<P> 
+<B>Fig. 3 - </B>Results from the
+original technique developed for dense mature stands in medium
+resolution images (1-3 m/pixel) and based on simply finding local
+maxima (Gougeon and Moore, 1989). As expected, it works well for dense
+stands, but produces numerous false positive in open stands.  
+
+<P>
+
+<img src="./Images/Regen_Fig4_s.gif">
+<img src="./Images/Regen_Fig5_s.gif">
+<img src="./Images/Regen_Fig6_s.gif">
+
+<P> 
+<B>Fig. 4 - </B>Results from the modified technique for which a shadow in a
+specific direction  (commensurable with that of the sun's direction)
+has to be detected before the local maxima is considered to represent a
+tree. It is more appropriate for open stands, but still works well with
+most dense stands. It has difficulties with trees too small to produce
+any detectable shadow.  
+
+<P> 
+<B>Fig. 5 - </B>The high directionality mask
+used in the hybrid approach to switch between the two (open and dense
+stands) techniques. It is based on gradient analysis and mask regions
+that have a high directional component in a direction commensurable
+with that of the sun's direction.  
+
+<P> 
+<B>Fig. 6 - </B>Results from the
+hybrid locally adaptive approach which can deal with most open and
+dense stands. Non-forested areas could have been masked out. It should
+permit good assessments of stand densities, stocking, and spacing.
+
+<HR>
+<P>
+<H2>Reference:</H2></A>
+
+
+
+<P>
+Gougeon, F.A. 1997.&nbsp; 
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/233347">
+A locally adaptive technique for forest regeneration assessments&nbsp; from 
+high resolution aerial images</A>. <em>In</em> CD-ROM of Proc. 19th Can. 
+Symp. Rem. Sens. Ottawa, Ontario, Canada, May 24-30, 1997. 9&nbsp;p.</P>
+
+
+  
+<P>
+Gougeon, F.A.; Moore, T. 1989. 
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/233317">
+Classification individuelle des arbres &agrave; partir d'images &agrave; haute r&eacute;solution 
+spatiale</A>. Pages 185-196 <em>in</em> Bernier, M.; et al.; eds. T&eacute;l&eacute;d&eacute;tection 
+et gestion des ressources Vol. VI - 6e congr&egrave;s de L'association 
+qu&eacute;b&eacute;coise de t&eacute;l&eacute;d&eacute;tection. Sherbrooke, 
+Qu&eacute;bec, Canada, May 4-6, 1988.</P>
+
+
+
+
+
+<HR>
+<P>
+<I> Redid page my way (FG) -- Feb. 2026 </I> </P>
+

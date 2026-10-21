@@ -1,0 +1,357 @@
+
+
+<CENTER>
+<h1>Individual Tree Crown Analysis of Satellite Images</h1>
+
+<P>François A. Gougeon, Ph.D.</P>
+</CENTER>
+
+	
+<P>
+<HR>
+<H2>Table of contents</H2>
+<UL>
+<LI><A HREF="#Introduction">Introduction</A>
+<LI><A HREF="#Hudson_Plantation">The Hudson Plantation Site </A>
+<LI><A HREF="#Analyses_Results">Individual tree crown(ITC) and tree top(TT) detection results</A>
+<LI><A HREF="#Analyses_Results_Table">Individual tree crown(ITC) and tree top(TT) detection result table</A>
+<LI><A HREF="#Classification_Results">Individual tree crown(ITC) classification results</A>
+<LI><A HREF="#Summary">Summary and conclusion</A>
+<LI><A HREF="#Appendix">Appendix 1 - IKONOS Spectral Bands Description</A>
+</UL>
+
+<HR>
+
+<A NAME="Introduction">
+
+<H1>Introduction</H1>             
+
+<p>
+	The Individual Tree Crown (ITC) techniques and methods of crown 
+delineation, species classification and regrouping into forest stands 
+can be successfully used with images from the newest generation of high 
+spatial resolution (&lt;1 m/pixel) satellites, like IKONOS, QuickBird, 
+OrbView, WorldView, GeoEye ... However, because of their lower spatial 
+resolution compared to the aerial data for which the ITC approach was 
+originally developed (30-60 cm/pixel), we are partially getting away 
+from the concept of "true" individual tree forest inventories (i.e., 
+there are more tree clusters - less tree crowns are separated as 
+individual objects). The even lower spatial resolution (e.g., 4 or 2.4 
+m/pixel) of the multispectral bands also affects the species recognition
+ capabilities. Nevertheless, ITC analyses used on such satellite images 
+can produce very good information at the stand level.</p>
+
+<!--
+
+<p>
+	The methodology exists to produce realistic forest stand polygons. The 
+species compositions within such stands could be superior to that 
+obtained by the conventional forest inventory process (i.e., 
+photo-interpretation of 1:15,000 scale aerial photos and/or equivalent 
+soft-copy approaches). In addition, special purpose inventories 
+targetting minority species can be extremely useful to forest compagnies
+ that have made such species their priority.</p>
+
+ 
+<p>
+	This Web page summerizes results from various studies pertainning to 
+the ITC analysis of high spatial resolution (&lt; 1 m/pixel) satellite 
+images, mostly that of IKONOS and QuickBird.</p>
+
+<ul class="toc">	
+	<li><strong>
+	The individual tree crown approach applied to IKONOS images of a coniferous plantation area</strong></li>
+	<li><a href="http://cfsdev.nofc.cfs.nrcan.gc.ca/projects/103/2">
+	Individual tree crown delineation on Ikonos and QuickBird imagery: the Cockburn Island study.</a></li>
+	<li><a href="http://cfsdev.nofc.cfs.nrcan.gc.ca/projects/103/3">
+	Specialized forest inventory from an IKONOS image</a></li>
+	<li><a href="http://cfsdev.nofc.cfs.nrcan.gc.ca/projects/103/4">
+	ITC species classification and regrouping with an IKONOS image</a></li>
+</ul>
+-->
+
+<H2>The individual tree crown approach applied to IKONOS images<BR> of a coniferous plantation area</H2>
+<p>
+<strong>Abstract </strong></p>
+<p>
+	In forestry, the availability of high spatial resolution (&lt;1 
+m/pixel) imagery from new earth observation satellites like IKONOS 
+favours a shift in the image analysis paradigm from a pixel-based 
+approach towards one dealing directly with the essential structuring 
+element of such images: the individual tree crown (ITC). This paper 
+gives an initial assessment of the effects of 1 and 4 m/pixel spatial 
+resolutions (panchromatic and multispectral bands, respectively) on the 
+detection, delineation, and classification of the individual tree crowns
+ seen in IKONOS images. Winter and summer IKONOS images of the Hudson 
+plantation of the Petawawa Research Forest, Ontario, Canada were 
+analyzed. The panchromatic images were resampled to 0.5 m/pixel and then
+ smoothed using a 3x3 kernel mean filter. A valley following algorithm 
+and rule-based isolation module were applied to delineate the individual
+ tree crowns. Local maxima within a moving 3x3 window (i.e., Tree Tops) 
+were also extracted from the smoothed images for comparis on. Crown 
+delineation and detection results were summarised and compared with 
+field tree counts. Overall, the ITC delineation and the local maxima 
+approaches led to tree counts that were on average 15% off for both 
+seasons. Visual inspection reveals delineation of clusters of two or 
+three crowns as a common source of error. Crown-based species spectral 
+signatures were generated for six classes representing conifer species, 
+plus a hardwood class and a shrub class. After the ITC-based 
+classification, classification accuracy was ascertained using separate 
+test areas of known species. The overall accuracy was 59%. Important 
+confusion exists between red and white spruces, and mature versus 
+immature white pines, but post-classification regroupings into single 
+spruce and white pine classes led to an overall accuracy of 67%.</p>
+
+<p>
+<strong>Reference</strong></p>
+
+<P>Gougeon, F.A. and Leckie, D.G. 2006
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/221934">
+The individual tree crown approach applied to IKONOS images of a 
+coniferous plantation area. </A>
+Photogrammetric Engineering and Remote Sensing. 72(11):1287-1297 
+</P>
+
+<HR>
+<A NAME="Hudson_Plantation">
+
+<H2>The Hudson Plantation Site (Petawawa Research Forest, Ontario) </H2>
+
+<IMG SRC="./Images/Hudson_stands_v4_s.gif" class="center-img">
+<BR>
+<A HREF="./Images/Hudson_stands_v4.gif"> Larger image</A>
+
+
+<p>
+<strong>Figure 1</strong>. 
+The Hudson site consisting of mature
+plantations of white spruce (Sw), red pine (Pr), red spruce (Sr), 
+Norway spruce (Sn), Scots pine (Ps), mature (Pwm) and immature (Pwi) 
+white pine and mixed sites containing red pine and white spruce (Pr 
+&amp; Sw). The dotted lines correspond to the area extracted from the 
+winter IKONOS panchromatic image (300 x 300m2), as seen in Figures 3 and
+ 4. The area extracted from the summer IKONOS images is slightly bigger 
+(720 x 560m2) than illustrated here, but Figures 2 and 5-8 have been 
+cropped to correspond the outside boundaries of this figure, 
+concentrating on the plantations of interest.
+</p>
+
+	
+<IMG SRC="./Images/Hudsonx2_count_areas_v4_s.gif" class="center-img">
+<BR>
+<A HREF="./Images/Hudsonx2_count_areas_v4.gif"> Larger image</A>
+
+
+<p>
+<small><strong>Figure 2</strong>. Part of the IKONOS panchromatic 
+sub-image showing the Hudson site on July 6, 2000 and the five 
+tree-counting test areas used for the results reported in Table 2 </small></p>
+
+
+<HR>
+
+<A NAME="Analyses_Results">
+
+<h2>Individual tree crown (ITC) and tree top (TT) detection results <BR> 
+on winter and summer IKONOS panchromatic images <BR>
+(resampled to 0.5m/pixel) </h2>
+	
+<IMG SRC="./Images/HUD_IKO_W_TTOPS_s.gif" class="center-img">
+<BR>
+<A HREF="./Images/HUD_IKO_W_TTOPS.gif"> Larger image</A>
+
+<p>
+<small><strong>Figure 3</strong>. Winter IKONOS sub-image of the 
+Hudson site with snow partially masked out (uniform gray) showing the 
+detected local maxima (Tree Tops) as black dots .</small></p>
+
+
+			
+<IMG SRC="./Images/HUD_IKO_W_ITCS_s.gif" class="center-img">
+<BR>
+<A HREF="./Images/HUD_IKO_W_ITCS.gif"> Larger image</A>
+
+<p>
+<small><strong>Figure 4</strong>. Individual Tree Crowns (ITCs) and/or
+Isolated objects (Isols) delineated on the winter IKONOS sub-image (300
+x 300m2) of the Hudson plantation site with snow partially masked out 
+(in white). </small></p>
+	
+	
+<!-- <IMG src="ITC_onSat_103_files/2269.jpg"> -->
+	
+<IMG SRC="./Images/Hud_Sx2_TTs_v4.gif" class="center-img">
+<BR>
+<A HREF="./Images/Hud_Sx2_TTs_v4.gif"> Larger image</A>
+<p>
+<small><strong>Figure 5</strong>. Summer IKONOS panchromatic sub-image of the Hudson plantation site with detected local maxima (TreeTops) shown in red. </small></p>
+
+	
+<IMG SRC="./Images/Hud_Sx2_ITCs_v4.gif" class="center-img">
+<BR>
+<A HREF="./Images/Hud_Sx2_ITCs_v4.gif"> Larger image</A>
+<p>
+<small><strong>Figure 6</strong>. Individual Tree Crowns (ITCs) and/or
+ Isolated objects (Isols) delineated on the summer IKONOS sub-image of 
+the Hudson plantation site. </small></p>
+
+<HR>
+
+<A NAME="Analyses_Results_Table">
+
+<h2>Individual tree crown(ITC) and tree top(TT) analyses results</h2>
+
+<IMG SRC="./Images/HudIKO_Table2_s.gif"class="center-img">
+<BR>
+<A HREF="./Images/HudIKO_Table2.gif"> Larger view</A>
+
+
+
+<HR>
+
+	
+<IMG SRC="./Images/Hud_Sx2_nIR_v4.gif" class="center-img">
+<BR>
+<A HREF="./Images/Hud_Sx2_nIR_v4.gif"> Larger image</A>
+
+
+<p>
+<strong>Figure 7</strong>. Near-infrared rendition of the 
+summer IKONOS multispectral sub-image of the Hudson plantation site 
+illustrating the effects of a 4 m/pixel spatial resolution (i.e., 
+individual tree crowns (ITCs) can not be seen, nor extracted). This 
+lower spatial resolution also has effects on the ITC species recognition
+ capabilities of IKONOS. </p>
+
+
+<HR>
+
+<A NAME="Classification_Results">
+
+<h2>Individual tree crown(ITC) classification results</h2>
+
+	
+<IMG SRC="./Images/Hud_Sx2_SC7_v4.gif" class="center-img">
+<BR>
+<A HREF="./Images/Hud_Sx2_SC7_v4.gif"> Larger image</A>
+
+
+<p>
+<strong>Figure 8</strong>. ITC classification of the summer 
+IKONOS sub-image with seven classes: red pine (red), red spruce (blue), 
+white spruce (cyan), Scots pine (pink), immature white pine (yellow), 
+mature white pine (orange) and hardwood (green).</p>
+
+
+<HR>
+
+<IMG SRC="./Images/HudIKO_Table3_s.gif"class="center-img">
+<BR>
+<A HREF="./Images/HudIKO_Table3.gif"> Larger view</A>
+
+
+
+<p>
+<strong>NOTES:</strong> 
+<P>
+Better species classification results are
+obtained when the panchromatic band is added to the purely spectral 
+bands in classification process. This may be more related to its higher 
+spatial resolution than the fact that it goes higher into the infra-red 
+part of the spectrum than the infra-red band itself (as seen in Appendix 
+Table&nbsp;1 ).</p>
+
+<P>
+Better species classification results "may" be obtained from pan-sharpened
+multispectral images. In any case, pan-sharpened multispectral images are more
+useful to the user, specially when creating training and testing areas in
+more complex forests (avoiding a Figure 7 look).
+
+<HR>
+
+<A NAME="Summary">
+
+<h3>Summary and conclusion (from the paper)</h3>
+<p>
+	For forestry applications, the high spatial resolution (&lt; 1 m/pixel)
+ of the newest satellite images allows us to perceive individual trees 
+whereas with previous lower resolution satellite imagery there was only 
+forest. This commands a more object-oriented image analysis paradigm, 
+one that drives us away from pixel-based techniques and towards the 
+delineation and classification of individual tree crowns. Fortunately, 
+such techniques have been developed to analyse even higher resolution 
+images (30-60 cm/pixel) from airborne sensors. This paper analysed their
+ application to IKONOS images of a coniferous plantation and reports on 
+their suitability and performance.</p>
+<p>
+	The crown detection and classification results at spatial resolutions 
+of 1 and 4 m/pixel are very encouraging. For both winter and summer 
+IKONOS images, tree counts with the well known local maxima (or Tree 
+Top) approach were approximately 15% off. Counts with the ITC approach 
+were also only 15% off relative to a ground survey. Th is compares well 
+with counts that were 8% off using 31 cm/pixel aerial data (Gougeon 
+1995b). However, there can be an unknown cancelling effect of omission 
+and commission errors. Quantification of tree-for-tree correspondence of
+ automated isolations was not possible in this study, but visual 
+inspection indicated that clusters of two or three trees occurred. 
+Clusters were more prevalent in the white pine and hardwood areas. 
+Single species, even age stands of essentially conical shaped trees 
+facilitated the delineation process. Less accurate delineation and count
+ results are to be expected with more diverse natural forest stands. An 
+overall ITC species classification accuracy of 66.5% was achieved, but 
+only after separating and recombining certain hard to separate but 
+related classes (white and red spruces; mature and immature white 
+pines). Again, the single species, even age, plantation nature of the 
+stands in this study probably had mitigating effects against the poorer 
+spatial resolution (4 m/pixel) of the m ultispectral data.</p>
+<p>
+	From the above analysis, it becomes clear that IKONOS images may not be
+ suitable to produce real individual tree inventories. However, it is 
+speculated (and on-going studies seem to confirm) that using an 
+ITC-based approach can lead to valuable results at the forest stand 
+level, especially relative to stand species composition (CLC-Camint, 
+2002; 2003; Leckie et al., 2003b). It is also known that some of the 
+information provided by such ITC-based analyses (i.e., composition, 
+density, canopy closure) can be used to generate, almost automatically, 
+forest stand boundaries (Gougeon, 1997b; Gougeon and Leckie, 2003), a 
+very important step in the production of traditional forest management 
+inventories. In addition, because species comprising less than 10% of a 
+stand s composition (25% in some cases) are generally not mapped in 
+typical forest management inventories, ITC-based analyses of IKONOS 
+imagery can be used to produce highly specialized inventories, such as 
+those based on the detection and localization of minority, yet 
+commercially important species (Gougeon et al., 2001; CLC-Camint, 2001).
+ The potential also exists to produce novel information for wildlife, 
+health and biodiversity assessments (CLC-Camint, 2003; Leckie et al., 
+2003a). Thus, as long as real individual tree inventories are not 
+expected, IKONOS image analyses with ITCbased tools can lead to very 
+valuable, sometimes heretofore unavailable, forestry information.</p>
+
+<!--		OTHER WORK TO CONSIDER
+
+<a href="http://cfsdev.nofc.cfs.nrcan.gc.ca/projects/103/2">
+	Individual tree crown delineation on Ikonos and QuickBird imagery: the Cockburn Island study.</a></div>
+</div>
+-->
+
+
+<HR>
+<A NAME="Appendix">
+
+
+<h2>Appendix 1 - IKONOS Spectral Bands Description</h2>
+
+
+<IMG SRC="./Images/HudIKO_Table1_s.gif" class="center-img">
+<BR>
+<A HREF="./Images/HudIKO_Table1.gif"> Larger view</A>
+
+
+
+<HR>
+<P>
+<I> Redid page my way (FG) -- Feb. 2026 </I> </P>
+
+
+
+</body></html>

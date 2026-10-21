@@ -1,0 +1,561 @@
+
+<CENTER>
+<h1>Individual Tree Crown Analysis of Aerial Images</h1>
+
+<P>François A. Gougeon, Ph.D.</P>
+</CENTER>
+
+	
+<P>
+<HR>
+<H2>Table of contents</H2>
+<UL>
+<LI><A HREF="#Introduction">Introduction</A>
+<LI><A HREF="#Aerial_Sensor">Aerial Sensor Technology</A>
+<LI><A HREF="#Image_needs">Image needs for computer image analysis</A>
+<LI><A HREF="#Synergy_LiDAR">Synergy with LiDAR</A>
+<LI><A HREF="#BRDF_Correction">BRDF Correction and Normalization of Aerial Data Area</A>
+<LI><A HREF="#Tests_BRDF">Feature-based BRDF correction</A>
+<LI><A HREF="#Conclusion">Conclusion</A>
+<LI><A HREF="#References">References</A>
+</UL>
+
+
+
+
+<A NAME="Introduction">
+<h2>Introduction</h2>
+
+<P>
+In Canada, forest management inventories are typically done by delineating forest stands and estimating their content via aerial photo interpretation (1:10K to 1:20K), with volume estimates being derived from plot samples and stratification. 
+Recent improvements to this traditional methodology involve 
+digital image acquisitions and soft-copy interpretation. 
+The process is still very time-consuming, costly and subject to interpreters biases, but more importantly, 
+it does not meet the full needs of modern forestry practices. 
+
+<P>
+A modern forest inventory would require additional spatial detail, with increased precision, accuracy and timeliness. Semi-automatic computer analysis of multispectral high spatial resolution (better than 1 m/pixel) digital images from satellites or aerial sensors has the potential to fulfill this mandate. 
+The Individual Tree Crown (ITC) methodology for crown delineation, species classification and regrouping into forest stands can be used successfully with images from aerial sensors.
+
+<P>
+This Web page summerizes some of the issues that are particular to the ITC analysis of aerial images and aerial datasets.</P>
+
+<HR>
+
+<A NAME="Aerial_Sensor">
+<h2>Aerial Sensor Technology</h2>
+
+<P>
+The availability of digital aerial images is sharply on the rise as numerous good
+quality sensors exist and because imagery is often acquired to systematically populate
+databases from which it is later purchased (e.g., NorthWest Geomatics' ADS40 acquisitions).
+In addition, the forest inventory community (i.e., the provincial governments, the forest
+companies) is moving to a soft-copy interpretation approach, discovering the added
+benefits of direct GIS compatibility and the pleasure of multispectral image
+interpretation; while retaining one of the main benefit from the past, that of controlled
+acquisition conditions via specific contracts. However, the use of the semi-automatic ITC
+approach to forest inventories on large areas covered by aerial images (or strips) has not
+been fully demonstrated yet.
+
+<P>
+In the field of digital remote sensing (DRS), there are three types of well know
+multispectral satellite sensors. First, sensors such as the one found on the Landsat satellite
+series that gather data one pixel at the time while using an oscillating mirror that sweeps
+across the field of view to create the image lines. Second, the so-called ‘push-broom’
+sensors à la SPOT, that gather one image line at the time with a linear array (i.e., a line)
+of Charge-coupled device (CCD) photosites. Third, the ‘full frame’ sensors like IKONOS,
+QuickBird, etc. that gather a full two-dimensional (2D) scene with one 2D CCD sensor per
+spectral band. All of these use prism or gate diffraction to gather the data in the other
+spectral bands.
+
+<P>
+A common feature of satellite images is their acquisition from a high altitude
+(600-800 km) allowing them to cover substantial areas of the ground while using lenses
+exhibiting very small view angles (2–3&deg;). Compare to aerial images, this simplifies
+substantially the pre-processing needed before an ITC analysis can be carried out, as
+objects (trees) are essentially all seen from above (i.e., no leaning to the side) and most
+importantly, are all part of the same scene. However, it should be noted that some
+satellite sensors can be rotated to look to the side, thus increasing the probability of an
+acquisition, but creating images where objects are seen with significant view angles.
+
+<P>
+The satellite sensors described above all sprung from developments made first on aerial
+sensors. This trend continues, albeit mostly outside of Canada now. For examples, the
+Deadulus series of airborne sensors sponsored a Landsat-type sensor, while the MEIS,
+the DMZ, or the Leica sensors, to name but a few, followed a push-broom
+approach. In addition to using multiple linear arrays to gather the multispectral data at
+nadir, many of these sensors also have similar acquisition capabilities looking forward
+and looking backward, thus creating multispectral stereo pairs for the more ‘traditional’
+interpretive approaches (now done on computers, in the so-called soft-copy
+environment). The Casi is essentially a hyperspectral sensor that can be used in
+multispectral mode, but typically producing more spectral bands than the ubiquitous four
+(nIR, R, G, and B). Sensors like that of Kodak or Applanix use the 2D frame camera
+approach, with or without stereo pair capabilities. Others sensors are even more
+sophisticated. Example systems and types are presented in Table 1.
+
+
+<P>
+<CENTER><B>Table 1. Types of airborne and satellite sensors.</B></CENTER>
+</P>
+
+<table border="1" cellspacing="0" cellpadding="5" width="500" align="center">
+<tr>
+<th>Type of sensors</th>
+<th>Examples</th>
+</tr>
+<tr>
+<td>Mechanical scanner  (oscillating mirror, one pixel)</td>	
+<td>Landsat, Deadalus</td>
+</tr>
+<tr>
+<td>Push broom sensors (one line at the time)</td>
+<td>MEIS, ADS40(v1,v2) , SPOT</td>
+</tr>
+<tr>
+<td>Frame cameras (2 dimensions)</td>	
+<td>Kodak, DMC, Applanix, ALTM</td>
+</tr>
+<tr>
+<td>Frame camera with pan-sharpening</td>	
+<td>IKONOS, QuickBird, …</td>
+</tr>
+<tr>
+<td>Wide push broom sensors  (more than one lines)</td>	
+<td>M7VI (v1, v2, v3) sensors</td>
+</tr>
+<tr>
+<td>Others (time synchronization and pan-sharpening)</td>	
+<td>Vexcel UltraCam</td>
+</tr>
+</table>
+
+<P>
+The Vexcel UltraCam sensor uses a sophisticated system of gathering panchromatic
+image parts through time, while getting its multispectral channels from single 2D arrays.
+It thus has to reconstruct the panchromatic image from all these frames, relying on
+correlation within overlapping image regions to make a single grey-level high definition
+scene. Multiple lenses are involved, thus corrections, such as those for
+vignetting, are made more complicated. Sections of what is often considered a single panchromatic 
+image can be spectrally off in relation to one another.
+Since a pan-sharpening technique is used to produce the high definition versions of the
+multispectral images, such anomalies are bound to carry through. 
+<P>
+On the other hand, the M7VI sensor uses an approach that sits in between the 2D frame
+camera capturing a full scene and the linear arrays capturing a single line of image at a
+time. It could be considered a wide push-broom approach, gathering data a few hundred
+lines at a time, yet delivering data in long strips like that of a push-broom sensor. In
+addition, up to five cameras (thus five lenses) are used in parallel to create a wider strip,
+leading to numerous artefacts in both image strip directions.
+
+<P>
+As a final note here: a warning that pan-sharpening, whether with satellite or airborne
+sensors, done on-the-fly on board the sensor or on the ground after the acquisition is 
+done, can often be misleading. 
+It is important to always keep in mind that the multispectral data
+was acquired at a cruder resolution (often by a factor of four) 
+and that this will affect (to a certain extent) the delineation of tree crowns, 
+but more importantly, their
+species recognition. Indeed, most multispectral pixels that appear to be well within a tree
+crown will have had their value affected by what is around that tree crown, be it shade,
+another crown, or background vegetation or material.
+
+
+<HR>
+
+<A NAME="Image_needs">
+
+<H2>Image needs for computer image analysis</H2>
+
+<P>
+One common mistake is to make the assumption that because imagery is acquired by a
+digital sensor it is automatically suitable for the production of forest inventories via semiautomated
+computer image analysis approaches. It is important to point out that the
+image requirements of computer image analysis can be quite different from that of softcopy
+interpretation. Obviously, this must be taken into account when specifying the
+deliverables for an aerial acquisition mission, as the typical products will have been
+designed for the interpretation realm. The differences are significant on many levels (see
+Table 2). 
+At a first level, soft copy interpretation typically requires stereo
+pairs with a good base line and sizeable image overlaps, while orthophotos or long
+georeferenced image strips are generally preferred for computer image analysis.
+
+Generally, the soft copy image interpretation realm favours good image and cursor
+handling capabilities, faster image loading and roaming speed, and a facility of
+movement from one stereo pair to another without loosing context and position; while
+computer image analysis needs "sine qua non" to be able to insure radiometric consistency
+throughout the area to be analysed.
+
+<P>
+With careful planning and good discussions with the aerial data providers, it is possible
+from a single mission to order data in all of the formats necessary for both soft-copy
+interpretation and computer image analysis, at very little incremental cost.
+
+<P><CENTER><B>
+Table 2. Typical image needs for soft copy interpretation and for computer image
+analysis.</B></CENTER>
+</P>
+
+<table border="1" cellspacing="0" cellpadding="5" width="600" align="center">
+
+<th>Soft-Copy Interpretation</th>	
+<th>Computer Image Analysis</th>
+
+<tr>
+<td>Color-balanced stereo pairs (with a good base) with a color-balanced orthoimage mosaic as reference</td>
+<td>Separate sizeable Ortho images or long georeferenced image strips (no artificial stretches or color balancing)</td>
+</tr><tr>
+<td>Pan-sharpened (RGB,CIR, RGBI) are preferred	</td>
+<td>Can benefit from separate panchromatic and prefers as many bands as possible</td>
+</tr><tr>
+<td>8 bit images are sufficient and preferred</td>	
+<td>Images reflecting the capabilities of the sensor
+(8, 12, 14, or 16 bits of radiometry, in 8 or 16 bit image files)</td>
+</tr><tr>
+<td>Images are preferred compressed, with a pyramid of resolutions for faster loading and fast scale changes	</td>
+<td>Only lossless compression tolerated. Some additional pyramids for visualization as a convenience</td>
+</tr><tr>
+<td>Sizeable ground area covered (for context) with large image overlap for stereo viewing</td>	
+<td>Long strips will improve BRDF corrections and make ITC analysis more efficient (with overlap to concentrate on  ±15&deg; off-nadir)</td>
+</tr>
+</table>
+
+</CENTER>
+
+
+<HR>
+
+<A NAME="Synergy_LiDAR">
+
+<h2>Synergy with LiDAR</h2>
+
+<P>
+Although the main focus of ITC analyses has been to extract forest resource information from
+digital imagery (satellite or aerial), the potential importance of LiDAR data within such a
+process should not be overlooked. The synergy with LiDAR data can occur at many levels. 
+At one extreme, with experimental high density data (>10 pulses/m2), Individual Tree Crowns (ITCs)
+can be extracted directly from images derived from the LiDAR data itself (Leckie et al., 2003).
+Here, we will discuss the benefits of the "soon-to-be" more commom low density (0.5-1 pulse/m2) 
+LiDAR data (already very common in Scandinavian countries).
+
+<P>
+Airborne LiDAR data are derived from the returns of Laser pulses aimed from the sensor 
+towards the ground and are often pre-separated by suppliers into first and last returns,
+generally corresponding for forested areas to canopy and ground returns (multiple returns
+and full-wave LiDAR sensors also exists, but will not be discussed here).
+One obvious use of such data is to create, by interpolation between the pulses, 
+Digital Surface Models (DSMs) and Digital Terrain Models (DTMs), from which 
+Canopy Height Models (CHMs) can be derived. 
+DTMs have multiple uses in forestry operation planning (e.g., road construction)
+and provide useful information when linked with other forest inventory attributes
+(e.g., site quality). 
+CHMs can be used to infer stand heights (occasionaly tree heights) and can constitute
+an important component of the stand delineation process.
+
+<P>
+While the ITC Suite strength is its ability to delineate, identify and regroup
+trees into forest stands (or other environmental strata) while providing a high level
+of detail on their content, mechanisms are needed to constrain the ITC algorithms 
+to the forested areas (i.e., differentiate tree areas from other image features).
+Masks of non-forest areas can often be created by specifying simple thresholds on specific 
+image spectral bands and/or on derived images (e.g., NDVI images). 
+Forested areas can often be ascertained by image segmentation, texture analysis or
+simple unsupervised classification of cruder resolution images. Sometimes,
+the information from a base map or an older forest inventories (typically already in
+GIS format) can also be used for such purposes. Unfortrunately,
+these methods can only provide a crude, first level masking of the non-forested areas.
+Nevertheless, they are often sufficient to allow the ITC algorithms to function properly.
+
+<P>
+Using such techniques, vegetated (yet, non-forested) areas are often not successfully masked out
+(e.g., forest gaps, meadows, clearings, etc.) and some areas of forest canopy are 
+inadvertently masked, often due to the spatial imprecision of some of these techniques 
+(e.g., texture analysis). This can result in either commission or omission errors in the 
+tree isolation or, more generally, poor crown delineation.
+
+<P>
+Using a simple threshold (< 2m) on a LiDAR-derived canopy model can often lead to
+a more accurate stratification of forest vs. non-forest areas. 
+The effect of using LiDAR-based masking to constrain ITC analysis to valid forest areas
+is illustrated in Figure 1. Here, non-forest areas such as clearings and gaps (a) are
+excluded from analysis using a LiDAR-based mask (b). The ITC tree crown delineation
+algorithm is constrained to areas of valid forest canopy only (c).
+Note that such CHM threshold is one of the few techniques that allows the ITC
+software to deal (often properly) with single trees in open vegetated areas (c).
+Nevertheless, thresholds on spectral channels are still useful to create specific masks 
+of interest such as roads, landings, right-of-way, or buildings.
+These features will always add plus-value to the final product.
+
+
+
+<P>
+<IMG  SRC=".\Images\LiDAR_Masking.gif">
+</P>
+
+
+<B>Figure 1</B> - Non-forest areas such as clearings and forest gaps (a) are excluded from analysis using a LiDAR-based mask (b); subsequent ITC analysis is constrained to valid forest areas (c). (Courtesy of Silvatech Consulting Ltd., BC)
+
+<P>
+<B>N.B.:</B> A Canopy Height Model (CHM) generated from stereoscopic correlation
+may work just as well.
+</P>
+
+
+<HR>
+
+<A NAME="BRDF_Correction">
+
+<h2>BRDF Correction and Normalization of Aerial Data Area</h2>
+
+<P>
+Relative to satellite images (e.g., IKONOS, QuickBird, etc.), images from aerial sensors bring many additional challenges to an ITC analysis: a) their large view angles (±32&deg;) show increasingly leaning trees as one gets away from the image centre (nadir), making crown delineation difficult and increasing the probability of trees being completely hidden, b) the effects of solar illumination are quite different from one side of the image to the other, as the trees on one side are generally seen as front lit, while on the other side, mostly backlit, c) there is a need to normalize between images and flight lines.
+
+<P>
+With scanned photos and digital frame cameras, these effects occur in a circular pattern. For “push-broom” sensors, that acquire their images line by line, this occurs in only one direction, across the image. To simplify the discussion, we will address the later case.
+<P>
+Good ITC analyses of aerial data can be obtained by concentrating on the more central regions of images and correcting for (and normalizing) intra- and inter-image variations of vegetation radiances. This can be accomplished via BRDF (Bidirectional Reflectance Distribution Function) correction curves. For multispectral images, different BRDF correction curves are collected and applied to each spectral band.
+
+<P>
+The first step consists in establishing a curve parameterizing the view angle and sun illumination effects across the image by accumulating a histogram of pixel averages in each column of an image. For this to work properly, one as to assume that the image is very long and/or that the ground features are random enough so that their spatial distribution does not overly affect the curve. This is rarely the case. Alternatively, a BRDF curve can be created from a single feature prevalent throughout the image, preferably the type of feature one is analysing (e.g., forest areas). With high resolution data, experience has shown that it may be better to acquire a separate curve for each specific feature, such as coniferous or deciduous tree crowns, as they respond differently to sun-view angle geometry because of their different shapes (i.e., conical trees vs rounded trees).
+
+<P>
+The second step consists in normalizing that BRDF curve relative to the grey-level value at nadir. Then, the curve represents typical additive or subtractive values found at off-nadir positions, relative to the average grey-level at nadir. The inversion of that curve becomes the correction curve. It describes the grey-level correction values to apply to each pixel based on its position off-nadir.
+
+<P>
+BRDF correction curves can also be used to normalize radiances between images and/or flight lines. Because these curves are relative to the average grey-level at nadir, it suffice to decide on a single fixed grey-level value (per channel) to be assigned to the nadir position of all images to normalize the radiances between them. 
+
+
+<HR>
+
+<A NAME="Tests_BRDF">
+
+<h2>Tests of feature-based BRDF correction curves on two flight lines</h2>
+
+
+<P>
+Two neighbouring flight lines from a Leica ADS40-v2 sensor mission were selected to test a
+variety of BRDF corrections (Figure 2). 
+Two test areas, one of softwoods and one of hardwoods,
+were created in the overlapping region of two flight lines (Figure 3). The
+differences in radiances of the ITCs within these two test areas on each image are going
+to be monitored for BRDF correction curves generated from a variety of increasingly
+precise features.
+</P>
+
+<CENTER>
+
+
+
+<P>
+<IMG  SRC=".\Images\ADS40v2_Bowater_FlightLines_v2_s.gif">
+</P>
+<P>
+<B>Figure 2</B> - Overlapping sections of adjascent ADS40v2 flight lines were selected to test 
+feature-based BRDF correction and normalization effects (courtesy of Bowater and R&B Cormier).
+</P>
+
+
+<P>
+<IMG  SRC=".\Images\ADS40v2_Bowater_mosaic_vvs.gif">
+</P>
+
+
+<P>
+<B>Figure 3</B> - Two test areas, one of softwoods (in white) and one of hardwoods (in green), 
+were created in the overlapping region of two flight lines from a Leica ADS-40v2 sensor 
+to test the correction capabilities of various BRDF curves.
+</P>
+
+
+
+<P>
+<IMG  SRC=".\Images\ADS40v2_Bowater_closeup_mosaic_vvs.gif">
+</P>
+
+
+<P>
+<B>Figure 4</B> - From the two flight lines, the two views of the softwood test area.
+One can see how the trees are seen leaning towards the right in the left image 
+(from the left flight line), and vice-versa in the right side image, 
+due to their off-nadir position in the original images.
+Notice also how the trees are seen slightly more front-lit in the right image
+than the left one.
+</P>
+
+</CENTER>
+
+<P>
+Traditionally, BRDF correction curves are generated by accumulating the radiance values
+within each image column (i.e., at each pixel position), for each spectral band. The
+effects are generally more pronounced with the near infra-red channel. For a given
+spectral band, such histogram displays the illumination trends as one gets away from
+nadir. A curve is fitted to the histogram and the radiance at nadir is subtracted from the
+curve to make it relative to nadir. The inverse of the curve is applied to the image data, on
+a line-by-line basis, to correct its radiances for the BRDF effects.
+
+<P>
+Unfortunately, this classic approach is strongly influenced by the image content. For
+example, the presence of more lakes or more cut over areas on one side of the image will
+strongly (and adversely) influence the correction curve. A first order improvement to this
+approach, consist in first creating a mask of vegetative areas and then, only collecting
+data underneath that mask.
+
+<P>
+Another potential improvement, one easily achieved in our context, is to use the ITC mask
+rather than a vegetation mask. This allows the correction curve to concentrate on the
+effect of BRDF on trees, which may be different than that on other low lying vegetation.
+As trees react differently to the combination of illumination and view angles due to their
+different shapes and branching patterns, a further improvement could potentially be
+achieved by using different masks (thus, different correction curves) for hardwood and softwood
+trees. In addition, since the individual tree crowns generated by our crown delineation
+process contain the shade side of each tree, another improvement could potentially be
+achieved by only picking-up the lit-side of each crown. After all, the lit-side of each tree
+crown is what will generally be used in the ITC classification process, thus, better to optimize the
+correction of radiances within that context. Such feature-specific BRDF curves are shown
+in Figure 5.
+</P>
+
+<P>
+<IMG  SRC=".\Images\ADS40v2_Bowater_BRDFcurves_v2_s.gif">
+</P>
+
+
+<P><CENTER>
+<B>Figure 5</B> - BRDF curves (near infrared band) of radiance tendencies due to the joint
+effects of the solar illumination angle and the view angle gathered under increasingly
+specific feature mask (from the left side image in Figure 3).
+</P></CENTER>
+
+
+<P>
+From the curves in Figure 5, one can see that trees (and
+vegetation in general) are much brighter on the left side of the image.
+Hardwoods are less affected by the phenomenon than
+softwood, the extreme case being, the lit-sides of
+hardwood tree crowns which appear barely affected at all (yellow line). 
+The effects of the various feature-based correction curves are shown in Table 3.
+
+
+
+
+<P><CENTER><B>
+Table 3 - Differences in radiances (in percentages) between tree crowns from two test areas (softwoods,
+hardwoods) from the overlapping zone of two flight lines after different types of feature-based
+corrections for view and illumination angles (i.e., BRDF corrections).
+</CENTER></B></P>
+
+<table border="2" cellspacing="0" cellpadding="2" width="650" align="center">
+
+<tr>
+<th colspan="8" > Feature-based BRDF correction types</th>
+</tr>
+
+<tr>
+<th>Cover type</th>
+<th>Spectral band</th>
+<th>Without BRDF</th>
+<th>Vegetation based</th>	
+<th>ITC based</th>
+<th>ITC(lit) based</th>
+<th>ITC (S/H)</th>
+<th>ITC(lit) (S/H)</th>
+</tr>
+<tbody align=center>
+<tr>
+<th>Softwood</th><td>nIR</td><td>24%</td><td>2.1%</td><td>1.1%</td><td>0.5%</td><td>2.6%</td><td>6.9%</td> </tr>
+<tr>
+<td> </td><td>Red</td><td>31%</td><td>9.3%</td><td>4.6%</td><td>10.6%</td><td>5.7%</td><td>1.3%</td> </tr>
+<tr>
+<td> </td><td>Green</td><td>29%</td><td>7.2%</td><td>1.6%</td><td>7.5%</td><td>5.8%</td><td>1.4%</td> </tr>
+<tr> 
+<td> </td><th>Mean</th><td>28%</td><td>6.2%</td><td>2.4%</td><td>6.2%</td><td>4.7%</td><td>3.2%</td> </tr>
+<tr> <td colspan="8"> &nbsp; </td></tr>
+<tr>						
+<th>Hardwood</th><td>nIR</td><td>14%</td><td>3.9%</td><td>4.6%</td><td>5.7%</td><td>2.4%</td><td>5.5%</td> </tr>
+<tr>
+</td><td></td><td>Red</td><td>6%</td><td>22.7%</td><td>22.3%</td><td>16.6%</td><td>10.8%</td><td>2%</td> </tr>
+<tr>
+</td><td></td><td>Green</td><td>14%</td><td>9.2%</td><td>9.5%</td><td>6.5%</td><td>7%</td><td>3.3%</td> </tr>
+<tr>
+<td> </td><th>Mean</th><td>11%</td><td>11.9%</td><td>12.1%</td><td>9.6%</td><td>6.7%</td><td>3.6%</td> </tr> 
+<tr> <td colspan="8"> &nbsp; </td></tr>
+<tr>
+<th>In general</th><th>Average</th><th>20%</th><th>8.7%</th><th>7.3%</th><th>7.9%</th><th>5.7%</th><th>3.4%</th> </tr>
+</TABLE>
+
+<P>
+Table 3 displays a progression towards increasingly similar spectral signatures (for
+both softwoods and hardwoods) as the two overlapping images are corrected and
+normalized with BRDF correction curves based on increasingly precise features.
+It shows that for two sample areas (one of softwoods, one of hardwoods) found on 
+both images, the intensity differences between images could be brought down from 28% and 11%, respectively, to 3.2% and 3.6%, respectively. 
+Although these results illustrate the strength of the BRDF approach, such residual differences may still be too big to ensure consistent spectral-based species classification throughout an area covered by multiple flight lines. However, one should take into consideration that these two sample areas were at 20&deg; and 25&deg; off-nadir, respectively. If we stay to closer to nadir, these differences may become more manageable.
+
+<P>
+For this reason, and others having to do with the quality of crown delineation, a sidelap 
+of 50% is recommended between flight lines such that the areas being analysed on each 
+image are within ±15&deg; of nadir. 
+This should allow the ITC analysis to concentrate on only the central portions of each image or flight line, while producing decent results through¬out the full area of interest. It should also be noted that additional care is needed when contracting-out aerial acquisitions for digital analysis, as their acquisition, manipulation and storage criteria are not quite the same as for visual interpretation of forests (see Table 2).
+
+
+<HR>
+
+<A NAME="Conclusion">
+
+<h2>Conclusion </h2>
+
+<P>
+The ITC methodology has been successful at delineating tree crowns, assigning them species and regrouping them into forest stand polygons with data from numerous satellite and airborne sensors at a variety of spatial resolution around 50 cm/pixel. 
+For each stand, the ITC-based information can be summarized and used to populate new attribute fields of the polygon, leading to information judged superior to that the conventional process. Volume, biomass, and carbon assessments, growth and yield models, etc., can all remain substantially the same. They will benefit from the additional precision. However, on the long run, they shall be replaced by models doing assessments starting from individual tree crowns.
+
+<P>
+Due to their large view angle and their less instantaneous acquisition (compare to satellite images), series of aerial images covering large areas require additional correction and normalization steps before their ITC analysis. Increased sidelap (overlap) areas and feature-based BRDF corrections and normalizations appear to offer a viable solution to these issues. However, additional care should also be taken while contracting-out for the acquisition of aerial images aimed for digital analysis.
+
+<P>
+As the bulk of the ITC analysis process can be made automatic (except the training of the species classifier), it should free-up interpreters to concentrate on the precision and the quality of the analysis: the number of species and situations that should be considered. Forest inventories with additional spatial details, increased precision, accuracy and timeliness may be within our reach.
+
+<HR>
+
+<A NAME="References">
+
+<h2>References </h2>
+
+<P> 
+Gougeon, F.A. 2010.
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/247283">
+The ITC Suite Manual : A Semi-Automatic Individual Tree Crown (ITC) Approach to Forest Inventories. </A>	
+Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre, 
+Victoria, B.C. Canada.  June 2010. 92 &nbsp;p. </P>
+
+<P>
+Gougeon, F.A. 2009.
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219074">
+The Individual Tree Crown (ITC) Approach to Forest Inventories:
+Satellite and Aerial Sensor Considerations.</A>
+<em>In</em> IUFRO Div. 4 Conf.: Extending Forest Inventory and Monitoring,
+Québec City, Canada, May 19-22, 2009. (On the Web)
+</P>
+
+
+<P> 
+Chubey, M.; Stehle, K.; Albricht, R.; Gougeon, F.; Leckie, D.; Gray, S.; Woods, M.; Courville, P. 2009.
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/219081">
+Semi-Automated Species Classification in Ontario Great Lakes - St. Lawrence Forest Conditions.
+Final Report: Great Lakes - St. Lawrence ITC Project(2005/2008).</A>
+Ontario Ministry of Natural Resources.
+January 2009. 71 &nbsp;p. </P>
+
+<P>
+Leckie, D.G.; Gougeon, F.A.; Hill, D.; Quinn, R.; Armstrong, L.; Shreenan, R.  2003.
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/225618">
+Combined high density lidar and multispectral imagery for individual tree crown analysis</A>.
+Can. J. of Remote Sensing.  29(5):1-17.
+</P>
+            
+
+<HR>
+<P>
+<I> Redid page my way (FG) -- Feb. 2026 </I> </P>
+
+
+
+ 

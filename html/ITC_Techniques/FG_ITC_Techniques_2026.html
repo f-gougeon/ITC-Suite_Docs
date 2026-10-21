@@ -1,0 +1,278 @@
+
+<html>
+
+<h1>Individual Tree Crown (ITC) Delineation, Identification, and 
+Regrouping in High Spatial Resolution (30-100cm/pixel) 
+Aerial and Satellite Multispectral Images </h1>
+
+<p>by <a HREF="../FG_CV/FG_CV_2026.html">François A. Gougeon</a>, Ph.D. <br>
+
+</p>
+	
+<P>
+<HR>
+<H2>Table of contents</H2>
+<UL>
+<LI><A HREF="#objectives">Research objectives</A>
+<LI><A HREF="#delineation">Individual tree crown delineation</A>
+<LI><A HREF="#ITCSC">Individual tree crown classification</A>
+<LI><A HREF="#regroup">Regrouping into forest stand <BR>
+	or environmental strata</A>
+<LI><A HREF="#automatic">Towards automatic interpretation</A>
+<LI><A HREF="#ref">References</A>
+</UL>
+
+<P>
+<HR>
+<H2>Goal:</H2>
+<P>
+The automatic or semi-automatic production of individual tree-based
+inventories as a goal in itself or as a necessary step in obtaining
+almost automatically the precise forest inventory parameters needed for
+sustainable forest development.
+
+<P>
+<B>Note:</B> Information on an individual tree basis could be useful to a
+variety of forestry-related tasks, from management at the landscape
+level to biodiversity monitoring, as input to computer models 
+(growth, health, ...) and  decision support systems,
+as well as, in the production of criteria and indicators
+of sustainable forest management success.
+
+<P>
+<HR>
+<A NAME="objectives">
+<H2>Research Objectives:</H2></A>
+
+From high spatial resolution (30-100 cm/pixel) 
+aerial and satellite multispectral images,
+to develop procedures, methods, and systems to:
+<P>
+- isolate individual tree crowns (ITC) from each other and 
+from the background vegetation;
+<P>
+- <A HREF="#delineation">delineate</A> precisely their crown boundaries;
+<P>
+- <A HREF="#ITCSC">identify</A> their species; and finally, if needed,
+<P>
+- <A HREF="#regroup">regroup</A> them into forest stands or
+ environmental strata.
+
+<P>
+<HR>
+<P>
+<H2> <A NAME="delineation"> Individual Tree Crown Delineation:<BR>
+A Valley-Following Approach </A></H2>
+
+<P>
+<IMG SRC=./images/Fig3as.gif>(a)
+<IMG SRC=./images/Fig3ds.gif>(b)
+<IMG SRC=./images/Fig5bs.gif>(c)
+<P>
+A representative section (100 pixels x 100 lines) of :
+<P>
+a) the original MEIS image (31 cm/pixel)
+<P>
+b) the initial tree crown isolation by the valley-following
+ program ITCVFOL
+<P>
+c) the more complete crown delineation by the rule-based 
+program ITCISOL
+<P>
+In one study
+ <A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/233374">
+(Gougeon, 1995c),</A> 
+81% of the automatically delineated tree crowns were the same
+as those obtained by a visual interpretation of the imagery. 
+The automatic tree counts from the image were within 8% of the
+counts done on the ground.
+
+<P>
+<HR>
+<P>
+<H2> <A NAME="ITCSC"> Individual Tree Crown Multispectral Classification
+in High Spatial Resolution Images </A>
+ </H2>
+
+<P>
+Various types of multispectral crown-based signatures were analysed
+for their species recognition capabilities using <B>manually</B> delineated
+tree crowns (i.e., to be independent of the automatic delineation process)
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/231665">
+(Gougeon, 1995b)</A>. 
+
+Each classification was repeated ten times to produce a more stable and accurate comparison.
+
+<PRE>
+
+	Classification comparison of multispectral signatures
+for tree crowns individually delineated on high resolution (36 cm) MEIS images
+  (with 50 trees/species, 5 species, 10 classification runs/signature type)
+
+Signature	Mean species accuracies (MSA)		Mean overall	
+   types	  BS     JP     RP     WP     WS	accuracy (range)
+	
+ave_sign	90.6   74.4   54.9   69.3   68.1	71.9 (66.7 - 75.4) 
+lit_sign	89.8   68.2   66.9   83.7   62.6	74.3 (70.7 - 78.0)
+tt_sign		89.5   74.5   59.1   61.7   55.1	67.7 (56.9 - 74.8)
+si_sign		85.8   71.3   65.7   80.0   63.4	73.3 (68.3 - 79.1)
+mpc1_s		93.8   71.5   57.9   83.5   72.0	76.4 (72.1 - 80.5)
+mpc1ev_s	95.7   70.0   64.3   80.0   70.3	76.2 (71.2 - 79.2)
+mcov_s		89.4   74.1   45.9   71.5   70.3	70.2 (65.1 - 78.1)
+
+Av. MSA		90.7   72.0   59.2   75.7   66.0	72.8
+
+BS = Black Spruce	WS = White Spruce
+JP = Jack Pine 		RP = Red Pine		WP = White Pine
+
+</PRE>
+
+<P>
+See 
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/231665">(Gougeon, 1995b)</A> for a description of the signature types.
+
+<P>
+<HR>
+<H2>Supervised classification of automatically delineated tree crowns </H2>
+
+<IMG SRC=./images/ITC_SC97.gif>
+
+<P>
+<HR>
+<P>
+
+<H2>Supervised classification of automatically delineated tree crowns<BR>
+at different spatial resolutions</H2>
+
+<IMG SRC=./images/hu7_ITCSC.gif>(a)
+<IMG SRC=./images/hu1_ITCSC_s.gif>(b)
+
+<P>
+Multispectral supervised classification into four coniferous species <BR>
+of tree crowns automatically delineated on:
+<UL>
+<LI>	a 70 cm/pixel multispectral image (a), and
+<BR>
+<LI>	a 100 cm/pixel multispectral image (b). 
+</UL>
+<P>
+<PRE>
+Green = Red Pine	Blue = Red Spruce	
+Yellow = White Pine	Red = White Spruce
+</PRE>
+
+<P>
+The image used in (b) was generated from the first image (a), simulating 
+"very" approximatively an image from the next generation of earth observation
+satellites (OrbView, Space Imaging, EarthWatch).
+
+<P>
+Average classification accuracies are typically around 74-81% for
+four coniferous species, depending on the spatial resolution
+(36 to 100 cm/pixel)
+<A HREF="https://ostrnrcan-dostrncan.canada.ca/handle/1845/233390">(Gougeon, 1995a)</A>.
+
+
+<P>
+<HR>
+<H2>Work with digitized colour infrared aerial photography</H2>
+
+<P>
+<IMG SRC=./images/china2_raw.gif>(a)
+
+<IMG SRC=./images/china2_SC.gif>(b)
+
+<P>
+(a) Colour infrared aerial photograph (1:19 000) of the China Creek
+region on Vancouver Island, <BR>
+British Columbia, Canada, digitized to a
+spatial resolution of ~60 cm/pixel.
+<P>
+(b) Isolation, delineation, and classification of the tree crowns
+detected in image (a) 
+<A HREF="#ref">(Gougeon, 1996)</A>.
+
+<P>
+<B>Note:</B> In collaboration with MacMillan Bloedel Lmtd., Nanaimo,
+ British Columbia, Canada.
+
+<P>
+<HR>
+<A NAME="regroup">
+<H2>Regrouping Tree Crowns into Forest Stands (or Environmental Strata)
+and Obtaining Detailed Information about their Content</H2></A>
+<P>
+<IMG SRC=./images/for_inv_stands.gif>
+
+<P>
+<HR>
+<P>
+<IMG SRC=./images/Copen_Fig3.gif> (3)
+<IMG SRC=./images/Copen_Fig4.gif> (4)
+<P>
+Fig. 3 - Pseudo-colour infrared rendition of a sub-area of a Casi image
+(60 cm/pixel) of the Nahmint Lake species trial area in the central
+forest of Vancouver Island, British Columbia, Canada. The delineated
+areas (in white) correspond to stands judged relatively uniform by a
+forester.  The training and testing areas used for the classification
+were delineated where species are known to be homogeneous.
+Their respective species and colours are: Douglas-fir (Pseudotsuga menziesii)
+in red, grand fir (Abies grandis) in green, amabilis fir (Abies
+amabilis) in blue, westerm redcedar (Thuja plicata) in orange, and
+western hemlock (Tsuga heterophylla) in yellow.
+
+<P>
+Fig. 4 - The individual tree crown (ITC) classification of Figure 3
+and its computer generated forest stand outlines using the same colour 
+scheme as Figure 3.
+
+<P>
+<HR>
+<H3>Tranfer of detailled forest information <BR>
+to a Geographic Information System (GIS) </H3>
+
+<P>
+
+<IMG SRC="./images/arcview_PCD_s.gif">
+<BR>
+<A HREF="./images/arcview_PCD.gif"> Larger view</A>
+
+<P>
+<B>Note:</B> 
+Work was supported in part by funding from Forest Renewal British
+Columbia (FRBC) awarded to MacMillan Bloedel Ltd., Nanaimo, BC.
+The Casi data was acquired by Itres Research, Calgary, Alberta, 
+who are collaborating on this FRBC project.
+<P>
+
+<HR>
+<A NAME="automatic">
+<H2>Towards Automatic Interpretation of Aerial Images<BR>
+and High Resolution (one metre/pixel) Satellite Images</H2></A>
+
+<P>
+<IMG SRC=./images/ind_tree_inv_E.gif>
+<P>
+
+<HR>
+<P>
+<A NAME="ref">
+<H2>References:</H2></A>
+<P>
+Please consult the following :
+
+Press <A HREF="../FG_CV/publications_e.html">here</A>, for a publication list.
+
+<P>
+<HR><HR>
+Go to the <A HREF="#top">table of contents</A> at the top of this file.
+<HR><HR>
+
+
+<HR>
+<P>
+<I> Redid page my way (FG) -- Feb. 2026 </I> </P>
+
+
+
+
