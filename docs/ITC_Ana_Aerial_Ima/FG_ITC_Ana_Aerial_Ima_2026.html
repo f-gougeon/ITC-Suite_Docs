@@ -1,17 +1,9 @@
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Individual Tree Crown Analysis of Aerial Images </title>
-<meta charset="ISO-8859-1">
-</head>
-
-
 <CENTER>
 <h1>Individual Tree Crown Analysis of Aerial Images</h1>
 
-<p>by <a HREF="../FG_CV/FG_CV_2026.html">François A. Gougeon</a>, Ph.D. <br>
+<p>by <a HREF="../FG_CV/FG_CV_2026.html">FranÃ§ois A. Gougeon</a>, Ph.D. <br>
 
 </CENTER>
 
@@ -71,9 +63,9 @@ been fully demonstrated yet.
 In the field of digital remote sensing (DRS), there are three types of well know
 multispectral satellite sensors. First, sensors such as the one found on the Landsat satellite
 series that gather data one pixel at the time while using an oscillating mirror that sweeps
-across the field of view to create the image lines. Second, the so-called ‘push-broom’
-sensors à la SPOT, that gather one image line at the time with a linear array (i.e., a line)
-of Charge-coupled device (CCD) photosites. Third, the ‘full frame’ sensors like IKONOS,
+across the field of view to create the image lines. Second, the so-called â€˜push-broomâ€™
+sensors Ã  la SPOT, that gather one image line at the time with a linear array (i.e., a line)
+of Charge-coupled device (CCD) photosites. Third, the â€˜full frameâ€™ sensors like IKONOS,
 QuickBird, etc. that gather a full two-dimensional (2D) scene with one 2D CCD sensor per
 spectral band. All of these use prism or gate diffraction to gather the data in the other
 spectral bands.
@@ -81,7 +73,7 @@ spectral bands.
 <P>
 A common feature of satellite images is their acquisition from a high altitude
 (600-800 km) allowing them to cover substantial areas of the ground while using lenses
-exhibiting very small view angles (2–3&deg;). Compare to aerial images, this simplifies
+exhibiting very small view angles (2â€“3&deg;). Compare to aerial images, this simplifies
 substantially the pre-processing needed before an ITC analysis can be carried out, as
 objects (trees) are essentially all seen from above (i.e., no leaning to the side) and most
 importantly, are all part of the same scene. However, it should be noted that some
@@ -95,7 +87,7 @@ Deadulus series of airborne sensors sponsored a Landsat-type sensor, while the M
 the DMZ, or the Leica sensors, to name but a few, followed a push-broom
 approach. In addition to using multiple linear arrays to gather the multispectral data at
 nadir, many of these sensors also have similar acquisition capabilities looking forward
-and looking backward, thus creating multispectral stereo pairs for the more ‘traditional’
+and looking backward, thus creating multispectral stereo pairs for the more â€˜traditionalâ€™
 interpretive approaches (now done on computers, in the so-called soft-copy
 environment). The Casi is essentially a hyperspectral sensor that can be used in
 multispectral mode, but typically producing more spectral bands than the ubiquitous four
@@ -127,7 +119,7 @@ sophisticated. Example systems and types are presented in Table 1.
 </tr>
 <tr>
 <td>Frame camera with pan-sharpening</td>	
-<td>IKONOS, QuickBird, …</td>
+<td>IKONOS, QuickBird, â€¦</td>
 </tr>
 <tr>
 <td>Wide push broom sensors  (more than one lines)</td>	
@@ -225,7 +217,7 @@ analysis.</B></CENTER>
 <td>Only lossless compression tolerated. Some additional pyramids for visualization as a convenience</td>
 </tr><tr>
 <td>Sizeable ground area covered (for context) with large image overlap for stereo viewing</td>	
-<td>Long strips will improve BRDF corrections and make ITC analysis more efficient (with overlap to concentrate on  ±15&deg; off-nadir)</td>
+<td>Long strips will improve BRDF corrections and make ITC analysis more efficient (with overlap to concentrate on  Â±15&deg; off-nadir)</td>
 </tr>
 </table>
 
@@ -317,10 +309,10 @@ may work just as well.
 <h2>BRDF Correction and Normalization of Aerial Data Area</h2>
 
 <P>
-Relative to satellite images (e.g., IKONOS, QuickBird, etc.), images from aerial sensors bring many additional challenges to an ITC analysis: a) their large view angles (±32&deg;) show increasingly leaning trees as one gets away from the image centre (nadir), making crown delineation difficult and increasing the probability of trees being completely hidden, b) the effects of solar illumination are quite different from one side of the image to the other, as the trees on one side are generally seen as front lit, while on the other side, mostly backlit, c) there is a need to normalize between images and flight lines.
+Relative to satellite images (e.g., IKONOS, QuickBird, etc.), images from aerial sensors bring many additional challenges to an ITC analysis: a) their large view angles (Â±32&deg;) show increasingly leaning trees as one gets away from the image centre (nadir), making crown delineation difficult and increasing the probability of trees being completely hidden, b) the effects of solar illumination are quite different from one side of the image to the other, as the trees on one side are generally seen as front lit, while on the other side, mostly backlit, c) there is a need to normalize between images and flight lines.
 
 <P>
-With scanned photos and digital frame cameras, these effects occur in a circular pattern. For “push-broom” sensors, that acquire their images line by line, this occurs in only one direction, across the image. To simplify the discussion, we will address the later case.
+With scanned photos and digital frame cameras, these effects occur in a circular pattern. For â€œpush-broomâ€ sensors, that acquire their images line by line, this occurs in only one direction, across the image. To simplify the discussion, we will address the later case.
 <P>
 Good ITC analyses of aerial data can be obtained by concentrating on the more central regions of images and correcting for (and normalizing) intra- and inter-image variations of vegetation radiances. This can be accomplished via BRDF (Bidirectional Reflectance Distribution Function) correction curves. For multispectral images, different BRDF correction curves are collected and applied to each spectral band.
 
@@ -503,8 +495,8 @@ Although these results illustrate the strength of the BRDF approach, such residu
 <P>
 For this reason, and others having to do with the quality of crown delineation, a sidelap 
 of 50% is recommended between flight lines such that the areas being analysed on each 
-image are within ±15&deg; of nadir. 
-This should allow the ITC analysis to concentrate on only the central portions of each image or flight line, while producing decent results through¬out the full area of interest. It should also be noted that additional care is needed when contracting-out aerial acquisitions for digital analysis, as their acquisition, manipulation and storage criteria are not quite the same as for visual interpretation of forests (see Table 2).
+image are within Â±15&deg; of nadir. 
+This should allow the ITC analysis to concentrate on only the central portions of each image or flight line, while producing decent results throughÂ¬out the full area of interest. It should also be noted that additional care is needed when contracting-out aerial acquisitions for digital analysis, as their acquisition, manipulation and storage criteria are not quite the same as for visual interpretation of forests (see Table 2).
 
 
 <HR>
@@ -542,7 +534,7 @@ Gougeon, F.A. 2009.
 The Individual Tree Crown (ITC) Approach to Forest Inventories:
 Satellite and Aerial Sensor Considerations.</A>
 <em>In</em> IUFRO Div. 4 Conf.: Extending Forest Inventory and Monitoring,
-Québec City, Canada, May 19-22, 2009. (On the Web)
+QuÃ©bec City, Canada, May 19-22, 2009. (On the Web)
 </P>
 
 
